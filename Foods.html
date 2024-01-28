@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <title>Food Booking and Next Page</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Hotel App</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Rooms</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <form id="foodBookingForm" onsubmit="return validateFoodBookingForm()">
+    <div class="form-group">
+      <label for="guestName">Guest Name:</label>
+      <input type="text" class="form-control" id="guestName" required>
+    </div>
+    <div class="form-group">
+      <label for="roomNumber">Room Number:</label>
+      <input type="text" class="form-control" id="roomNumber" required>
+    </div>
+    <div class="form-group">
+      <label for="mealType">Meal Type:</label>
+      <select class="form-control" id="mealType" required>
+        <option selected>Choose...</option>
+        <option value="breakfast">Breakfast</option>
+        <option value="lunch">Lunch</option>
+        <option value="dinner">Dinner</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="specialRequests">Special Requests:</label>
+      <textarea class="form-control" id="specialRequests" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Book Food</button>
+    <a class="btn btn-success" href="Vechile.html" role="button">Next</a>
+  </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script>
+  function validateFoodBookingForm() {
+    // Add your validation logic for the food booking form here
+    return true; // Returning true to allow form submission
+  }
+</script>
+
+</body>
+</html>

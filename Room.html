@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <title>Room Booking and Next Page</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Travel App</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <form id="roomBookingForm" onsubmit="return validateRoomBookingForm()">
+    <div class="form-group">
+      <label for="guestName">Guest Name:</label>
+      <input type="text" class="form-control" id="guestName" required>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="numAdults">Number of Adults:</label>
+        <select class="form-control" id="numAdults" required>
+          <option selected>Choose...</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <!-- Add more options if needed -->
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="numChildren">Number of Children:</label>
+        <select class="form-control" id="numChildren" required>
+          <option selected>Choose...</option>
+          <option value="0">None</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <!-- Add more options if needed -->
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="roomType">Room Type:</label>
+      <select class="form-control" id="roomType" required>
+        <option selected>Choose...</option>
+        <option value="single">Single Room - $100 per night</option>
+        <option value="double">Double Room - $150 per night</option>
+        <option value="suite">Suite - $200 per night</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="checkInDate">Check-in Date:</label>
+      <input type="date" class="form-control" id="checkInDate" required>
+    </div>
+    <div class="form-group">
+      <label for="checkOutDate">Check-out Date:</label>
+      <input type="date" class="form-control" id="checkOutDate" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Book Room</button>
+    <a class="btn btn-success" href="Foods.html" role="button">Next</a>
+  </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script>
+  function validateRoomBookingForm() {
+    // Add your validation logic for the room booking form here
+    return true; // Returning true to allow form submission
+  }
+</script>
+
+</body>
+</html>

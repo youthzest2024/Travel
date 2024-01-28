@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <title>Travel Information Form</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Travel App</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+      <li class="nav-item">
+        <form class="form-inline my-2 my-lg-0" onsubmit="return searchValidation()">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" id="searchInput" aria-label="Search" required>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <div class="card mb-4">
+    <div class="card-header">
+      Starting Point
+    </div>
+    <div class="card-body">
+      <form onsubmit="return validateForm()">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="startLocation">Starting From:</label>
+            <select class="form-control" id="startLocation">
+              <option selected>Choose...</option>
+              <option value="location1">Location 1</option>
+              <option value="location2">Location 2</option>
+              <option value="location3">Location 3</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="startAmount">Fixed Amount:</label>
+            <input type="text" class="form-control" id="startAmount" readonly>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">
+      Destination
+    </div>
+    <div class="card-body">
+      <form onsubmit="return validateForm()">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="endLocation">Ending To:</label>
+            <select class="form-control" id="endLocation">
+              <option selected>Choose...</option>
+              <option value="location1">Location 1</option>
+              <option value="location2">Location 2</option>
+              <option value="location3">Location 3</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="endAmount">Fixed Amount:</label>
+            <input type="text" class="form-control" id="endAmount" readonly>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">
+      Travel Date
+    </div>
+    <div class="card-body">
+      <form onsubmit="return validateForm()">
+        <div class="form-group">
+          <label for="startDate">Starting Date:</label>
+          <input type="date" class="form-control" id="startDate" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a class="btn btn-success" href="Room.html" role="button">Next</a>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script>
+  document.getElementById("startLocation").addEventListener("change", function () {
+    document.getElementById("startAmount").value = getFixedAmount(this.value);
+  });
+
+  document.getElementById("endLocation").addEventListener("change", function () {
+    document.getElementById("endAmount").value = getFixedAmount(this.value);
+  });
+
+  function getFixedAmount(location) {
+    switch (location) {
+      case "location1":
+        return "100";
+      case "location2":
+        return "150";
+      case "location3":
+        return "200";
+      default:
+        return "0";
+    }
+  }
+
+  function validateForm() {
+    // Add your validation logic here
+    return true; // Returning true to allow form submission
+  }
+
+  function searchValidation() {
+    var searchInput = document.getElementById("searchInput").value;
+    if (searchInput.trim() === "locatin") {
+      alert("Please enter a valid search term.");
+      return false;
+    }
+    // Add additional search validation logic if needed
+    return true;
+  }
+</script>
+
+</body>
+</html>
